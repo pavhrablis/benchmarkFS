@@ -70,7 +70,7 @@ loocv <- function(x, y){
 #'
 #' @param x input data where columns are variables and rows are observations (all numeric)
 #' @param y decision variable as a boolean vector of length equal to number of observations
-#' @param method cross-validation method \code{cv.kfold} for cross-validation \code{k-fold} or \code{cv.rsampling} for \code{random sampling}
+#' @param method cross-validation method \code{kfoldcv} for cross-validation \code{k-fold} or \code{rsampling} for \code{random sampling}
 #' @param params A \code{\link{list}} with the following fields:
 #' \itemize{
 #'   \item \code{niter} -- the number of validation repetitions
@@ -90,7 +90,7 @@ loocv <- function(x, y){
 #'
 #' @export
 cross.val <- function(x, y, method, params.cv = list(niter = 10, k = 3, test.size = 0.3)){
-  if(k < 3){
+  if(params.cv$k < 3){
     stop('k < 3 ')
   }
   if(!(method %in% c('kfoldcv', 'rsampling', 'loocv'))){

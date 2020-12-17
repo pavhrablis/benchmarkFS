@@ -55,7 +55,7 @@ benchmarkFS <- function(x,
                         y,
                         methods = c('fs.utest'),
                         method.cv = 'kfoldcv',
-                        params.cv = list(k = 3, iter = 5, test.size = 0.3),
+                        params.cv = list(k = 3, niter = 5),
                         level.cor = 1,
                         params = list(adjust = 'holm', feature.number = 10),
                         asm = c('fs.utest'),
@@ -102,7 +102,7 @@ benchmarkFS <- function(x,
     }
   }
 
-  list.index.cross <- cross.val(x, y, method, params.cv)
+  list.index.cross <- cross.val(x, y, method.cv, params.cv)
   feature.selection.result <- list()
   for(method in methods){
     result <- feature.selection(x, y, method, list.index.cross, params = params)
