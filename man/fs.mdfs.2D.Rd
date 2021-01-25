@@ -4,7 +4,7 @@
 \alias{fs.mdfs.2D}
 \title{Build MultiDimensional Feature Selector from IGs uses GPU,  is a parallel computing platform CUDA}
 \usage{
-fs.mdfs.2D(x, y, params = list(adjust = "holm"))
+fs.mdfs.2D(x, y, params = list(adjust = "holm", alpha = 0.05))
 }
 \arguments{
 \item{x}{input data where columns are variables and rows are observations (all numeric)}

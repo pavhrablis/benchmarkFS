@@ -4,7 +4,7 @@
 \alias{fs.mdfs.1D}
 \title{Build MultiDimensional Feature Selector from IGs}
 \usage{
-fs.mdfs.1D(x, y, params = list(adjust = "holm"))
+fs.mdfs.1D(x, y, params = list(adjust = "holm", alpha = 0.05))
 }
 \arguments{
 \item{x}{input data where columns are variables and rows are observations (all numeric)}
@@ -22,7 +22,7 @@ A \code{\link{data.frame}} with selected features and p.value
 decisions <- data$class
 data$class <- NULL
 
-fs.mdfs.1D(data, decisions, params = list(adjust = 'SGoF'))
+fs.mdfs.1D(data, decisions, params = list(adjust = 'SGoF', alpha = 0.05))
 }
 }
 \description{

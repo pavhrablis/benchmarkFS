@@ -2,43 +2,33 @@
 % Please edit documentation in R/feature.selection.R
 \name{feature.selection}
 \alias{feature.selection}
-\title{Selection of features in cross-validation}
+\title{Selection of features}
 \usage{
-feature.selection(x, y, method, list.index.cross, params = list())
+feature.selection(
+  x,
+  y,
+  methods,
+  connection.method = "sum",
+  params = list(adjust = "SGoF", feature.number = 10, alpha = 0.05)
+)
 }
 \arguments{
 \item{x}{input data where columns are variables and rows are observations (all numeric)}
 
 \item{y}{decision variable as a boolean vector of length equal to number of observations}
 
-\item{method}{the name of the selection method for traits available in this library}
-
-\item{list.index.cross}{A \code{\link{list}} with indexes obtained in cross-validation}
+\item{connection.method}{method of combining selection results if more than one method is selected, options \code{'sum'} for the sum of all selected filtration methods or \code{'intersect'} for part of the common}
 
 \item{params}{A \code{\link{list}} parameters required for this method of feature selection}
+
+\item{method}{the name of the selection method for traits available in this library}
 }
 \value{
-A \code{\link{list}} with selected features for each iteration of cross-validation
+A  new \code{\link{data.frame}} consisting of the selected functions and the decision variable
 }
 \description{
-Selection of features in cross-validation
+Selection of features
 }
 \details{
 Uses the methods of selection of features  available in this library
-}
-\examples{
-\donttest{
-
-class <- data$class
-data$class <- NULL
-
-list.index.cross <- cross.validation(x = data, y = class, method= 'cv.kfold', k = 3, niter = 10)
-
-list.selected.var <- feature.selection(x = data,
-                             y = class,
-                             method = 'fs.utest',
-                             list.index.cross = list.index.cross,
-                             params = list(adjust = 'holm'))
-
-}
 }

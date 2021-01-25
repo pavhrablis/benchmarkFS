@@ -1,2 +1,2 @@
-^benchmarkFS\.Rproj$
+^.*\.Rproj$
 ^\.Rproj\.user$

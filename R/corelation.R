@@ -12,6 +12,7 @@ corelation <- function(data, level.cor, start.var){
 }
 
 
+#' @export
 corelation.search <- function(data, level.cor){
   listcor <- lapply(1:ncol(data), function(start) corelation(data, level.cor, start.var = start))
   return(unique(unlist(listcor)))

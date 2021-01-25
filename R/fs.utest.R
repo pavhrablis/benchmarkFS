@@ -25,7 +25,7 @@
 #' @export
 fs.utest <- function(x,
                      y,
-                     params = list(adjust = 'holm')
+                     params = list(adjust = 'holm', alpha = 0.05)
 ){
   if(!is.data.frame(x)){ x <- as.data.frame(x)}
   x$class <- y
@@ -57,6 +57,6 @@ fs.utest <- function(x,
   var.imp.all = as.data.frame(cbind(var.p.value.sort, adjust.p.value))
   names(var.imp.all) = c("name","Pvalue","adjustPvalue")
   row.names(var.imp.all) = NULL
-  var.imp = var.imp.all[which(var.imp.all$adjustPvalue < 0.05),]
+  var.imp = var.imp.all[which(var.imp.all$adjustPvalue < params$alpha),]
   return(var.imp)
 }

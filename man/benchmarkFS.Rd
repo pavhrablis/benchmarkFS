@@ -9,9 +9,9 @@ benchmarkFS(
   y,
   methods = c("fs.utest"),
   method.cv = "kfoldcv",
-  params.cv = list(k = 3, iter = 5, test.size = 0.3),
+  params.cv = list(k = 3, niter = 5),
   level.cor = 1,
-  params = list(adjust = "holm", feature.number = 10),
+  params = list(adjust = "holm", feature.number = 10, alpha = 0.05),
   asm = c("fs.utest"),
   model = c("fs.utest")
 )
@@ -23,7 +23,7 @@ benchmarkFS(
 
 \item{methods}{A \code{\link{vector}}  with feature selection methods available in this library for comparison}
 
-\item{method.cv}{validation method \code{kfoldcv} for cross-validation \code{k-fold} or \code{rsampling} for \code{random sampling} or \code{loocv} for leave-one-out cross-validation}
+\item{method.cv}{validation method \code{kfoldcv} for cross-validation \code{k-fold} or \code{rsampling} for \code{random sampling}}
 
 \item{params.cv}{A \code{\link{list}} with the following fields:
 \itemize{
@@ -38,6 +38,7 @@ benchmarkFS(
 \itemize{
 \item \code{adjust} -- method as accepted by \code{\link[stats]{p.adjust}} (\code{"BY"} is recommended for FDR, see Details) or \code{\link[sgof]{SGoF}} for MDFS1D, MDFS2D and U-test
 \item \code{mrmr.feature.number} -- number of attributes to select. Must not exceed \code{ncol(x)}
+\item \code{alpha} -- significance level for MDFS1D, MDFS2D and U-test
 }}
 
 \item{asm}{A \code{\link{vector}} with enumeration method for which to calculate Lustgarten’s stability measure}
@@ -71,7 +72,7 @@ benchmarkFS(data,
            method.cv = 'cv.kfold',
            params.cv = list(k = 3, iter = 10),
            level.cor = 0.75,
-           params = list(adjust = 'SGoF', mrmr.feature.number = 10),
+           params = list(adjust = 'SGoF', mrmr.feature.number = 10, alpha = 0.05),
            asm = c('fs.utest', 'fs.mrmr'),
            model = c('fs.utest', 'fs.mrmr')
            )

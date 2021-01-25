@@ -11,7 +11,7 @@ cross.val(x, y, method, params.cv = list(niter = 10, k = 3, test.size = 0.3))
 
 \item{y}{decision variable as a boolean vector of length equal to number of observations}
 
-\item{method}{cross-validation method \code{cv.kfold} for cross-validation \code{k-fold} or \code{cv.rsampling} for \code{random sampling}}
+\item{method}{cross-validation method \code{kfoldcv} for cross-validation \code{k-fold} or \code{rsampling} for \code{random sampling}}
 
 \item{params}{A \code{\link{list}} with the following fields:
 \itemize{

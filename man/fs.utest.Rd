@@ -4,7 +4,7 @@
 \alias{fs.utest}
 \title{Test U Manna-Whitneya (U-test) for feature selection}
 \usage{
-fs.utest(x, y, params = list(adjust = "holm"))
+fs.utest(x, y, params = list(adjust = "holm", alpha = 0.05))
 }
 \arguments{
 \item{x}{input data where columns are variables and rows are observations (all numeric)}

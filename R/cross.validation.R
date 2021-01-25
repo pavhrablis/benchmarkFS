@@ -46,20 +46,6 @@ rsampling <- function(x, y, test.size = 0.3){
 }
 
 
-loocv <- function(x, y){
-  size <- nrow(x)
-  idx <- c(1:size)
-  index.test <- list()
-  index.train <- list()
-  for(i in 1:size){
-    index.test[[i]] <- i
-    index.train[[i]] <- idx[-i]
-  }
-  validation.index <- list(index.test, index.train)
-  names(validation.index) <- c('testing', 'training')
-  return(validation.index)
-}
-
 
 #' Cross-validation
 #'
@@ -90,28 +76,23 @@ loocv <- function(x, y){
 #'
 #' @export
 cross.val <- function(x, y, method, params.cv = list(niter = 10, k = 3, test.size = 0.3)){
-  if(params.cv$k < 3){
-    stop('k < 3 ')
-  }
-  if(!(method %in% c('kfoldcv', 'rsampling', 'loocv'))){
-    stop('unknown validation method, use please сv.kfold or cv.rsampling')
+  if(!(method %in% c('kfoldcv', 'rsampling'))){
+    stop('Unknown validation method, use please сv.kfold or cv.rsampling')
   }
   indexes.cross.val <- list()
   if(method == 'kfoldcv'){
+    if(params.cv$k < 2){
+      stop('k < 2')
+    }
     for(i in 1:params.cv$niter){
       index <-kfoldcv(x, y, params.cv$k)
       indexes.cross.val <- append(indexes.cross.val, list(index))
     }
   }
   else if(method == 'rsampling'){
+    if(params.cv$test.size > 0.9 || params.cv$test.size < 0.05){stop('Invalid test size for Random Sampling')}
     for(i in 1:params.cv$niter){
       index <-rsampling(x, y, params.cv$test.size)
-      indexes.cross.val <- append(indexes.cross.val, list(index))
-    }
-  }
-  else if(method == 'loocv'){
-    for(i in 1:params.cv$niter){
-      index <- loocv(x, y)
       indexes.cross.val <- append(indexes.cross.val, list(index))
     }
   }
