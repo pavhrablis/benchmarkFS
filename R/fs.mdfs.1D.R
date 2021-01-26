@@ -17,6 +17,7 @@
 #' fs.mdfs.1D(data, decisions, params = list(adjust = 'SGoF', alpha = 0.05))
 #' }
 #'
+#'
 #' @import MDFS
 #' @import sgof
 #' @importFrom stats p.adjust
