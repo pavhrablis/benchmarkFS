@@ -1,6 +1,6 @@
 #' Test U Manna-Whitneya (U-test) for feature selection
 #'
-#' @detail
+#' @details
 #' In case of FDR control it is recommended to use Benjamini-Hochberg-Yekutieli
 #'  p-value adjustment or SGoF
 #'
@@ -11,7 +11,8 @@
 #' @return A \code{\link{data.frame}} with selected features and p.value
 #'
 #' @examples
-#' \dontest{
+#'
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL

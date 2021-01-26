@@ -24,7 +24,7 @@ Performs MRMR for feature selection
 }
 \examples{
 
-\dontest{
+\donttest{
 
 decisions <- data$class
 data$class <- NULL

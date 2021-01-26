@@ -9,7 +9,7 @@
 #' @return A \code{\link{data.frame}} with selected features
 #'
 #' @examples
-#' \dontest{
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL

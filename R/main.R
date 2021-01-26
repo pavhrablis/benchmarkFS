@@ -33,7 +33,7 @@
 #'
 #'
 #' @examples
-#' \dontest{
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL

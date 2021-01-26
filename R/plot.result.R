@@ -12,7 +12,8 @@
 #' @return graph showing
 #'
 #' @examples
-#' \dontest{
+#'
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL
@@ -23,7 +24,7 @@
 #'            method = 'kfoldcv',
 #'            params.cv = list(k = 3, iter = 10),
 #'            level.cor = 0.75,
-#'            params = list(adjust = 'SGoF', mrmr.feature.number = 10),
+#'            params = list(adjust = 'SGoF', feature.number = 10, alpha = 0.05),
 #'            asm = c('fs.utest', 'fs.mrmr'),
 #'            model = c('fs.utest', 'fs.mrmr')
 #'            )

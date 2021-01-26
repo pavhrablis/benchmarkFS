@@ -32,7 +32,7 @@ observational indices into training and test subsamples of a given number of ite
 Implements two methods : cross-validation k-fold and random sampling
 }
 \examples{
-\dontest{
+\donttest{
 
 decisions <- data$class
 data$class <- NULL

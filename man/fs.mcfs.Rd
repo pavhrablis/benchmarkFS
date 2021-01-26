@@ -23,7 +23,7 @@ Monte Carlo Feature Selection And Interdependency Discovery
 Performs Monte Carlo Feature Selection (MCFS-ID) on a given data set.
 }
 \examples{
-\dontest{
+\donttest{
 
 decisions <- data$class
 data$class <- NULL

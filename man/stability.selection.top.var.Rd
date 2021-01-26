@@ -17,6 +17,10 @@ A \code{\link{data.frame}} with the result Lustgarten's stability measure ASM (N
 \description{
 Compute Lustgarten's stability measure ASM (N) dependence for top-N variables N = 5,10,15,20,30,40,50,75,100
 }
+\details{
+Compute Lustgarten's stability measure ASM (N) dependence for top-N variables N = 5,10,15,20,30,40,50,75,100
+for variables selected in cross-validation
+}
 \examples{
 \donttest{
 

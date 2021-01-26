@@ -77,7 +77,7 @@ feature.selection.cv = function(x, y, method, list.index.cross, params = list())
 #'                   methods = c('fs.utest','fs.mdfs.1D', 'fs.mrmr', 'fs.mcfs'),
 #'                   connection.method = 'sum',
 #'                   params = list(feature.number=100, adjust = 'holm', alpha = 0.05))
-#'
+#' }
 #' @export
 feature.selection <- function(x,
                               y,

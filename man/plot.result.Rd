@@ -24,7 +24,8 @@ The function creates a graph showing the dependence of the selected metrics mode
 N = 5,10,15,20,30,40,50,75,100 for selected FS
 }
 \examples{
-\dontest{
+
+\donttest{
 
 decisions <- data$class
 data$class <- NULL
@@ -35,7 +36,7 @@ result <- benchmarkFS(data,
            method = 'kfoldcv',
            params.cv = list(k = 3, iter = 10),
            level.cor = 0.75,
-           params = list(adjust = 'SGoF', mrmr.feature.number = 10),
+           params = list(adjust = 'SGoF', feature.number = 10, alpha = 0.05),
            asm = c('fs.utest', 'fs.mrmr'),
            model = c('fs.utest', 'fs.mrmr')
            )

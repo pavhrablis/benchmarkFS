@@ -1,4 +1,4 @@
-#' @importFroms stats cor
+#' @importFrom stats cor
 corelation <- function(data, level.cor, start.var){
   .cor = function(m, data, level.cor, start.var){
     if (!is.data.frame(data)) data = as.data.frame(data)

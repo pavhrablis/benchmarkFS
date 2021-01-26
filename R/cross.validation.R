@@ -66,7 +66,7 @@ rsampling <- function(x, y, test.size = 0.3){
 #' @return A \code{\link{list}} with lindices divided into train and test subsamples niter repetitions.
 #'
 #' @examples
-#' \dontest{
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL

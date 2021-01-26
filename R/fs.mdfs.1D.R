@@ -9,7 +9,7 @@
 #' is recommended for FDR, see Details) or SGoF \code{\link[sgof]{SGoF}}
 #' @return A \code{\link{data.frame}} with selected features and p.value
 #'
-#' \dontest{
+#' \donttest{
 #'
 #' decisions <- data$class
 #' data$class <- NULL

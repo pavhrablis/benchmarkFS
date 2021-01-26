@@ -23,6 +23,7 @@ Compute Lustgarten’s stability measure
 Compute Lustgarten’s stability measure for variables selected in cross-validation
 }
 \examples{
+
 \donttest{
 
 class <- data$class

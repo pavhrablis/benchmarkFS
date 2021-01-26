@@ -61,7 +61,7 @@ Benchmark for comparison of feature selection methods dedicated to high-throughp
 sequencing data.
 }
 \examples{
-\dontest{
+\donttest{
 
 decisions <- data$class
 data$class <- NULL

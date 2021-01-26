@@ -9,6 +9,7 @@
 #' @return value stability of selection (Lustgarten’s stability measure)
 #'
 #' @examples
+#'
 #' \donttest{
 #'
 #' class <- data$class
@@ -62,7 +63,7 @@ stabilty.selection <- function(list.selected.var, list.index.cross, nvar){
 
 #' Compute Lustgarten's stability measure ASM (N) dependence for top-N variables N = 5,10,15,20,30,40,50,75,100
 #'
-#' @detail
+#' @details
 #' Compute Lustgarten's stability measure ASM (N) dependence for top-N variables N = 5,10,15,20,30,40,50,75,100
 #' for variables selected in cross-validation
 #'

@@ -32,3 +32,16 @@ Selection of features
 \details{
 Uses the methods of selection of features  available in this library
 }
+\examples{
+\donttest{
+
+class <- data$class
+data$class <- NULL
+
+feature.selection(x = data,
+                  y = class,
+                  methods = c('fs.utest','fs.mdfs.1D', 'fs.mrmr', 'fs.mcfs'),
+                  connection.method = 'sum',
+                  params = list(feature.number=100, adjust = 'holm', alpha = 0.05))
+}
+}
