@@ -31,7 +31,7 @@ ranking.feature <- function(list.selected.var){
     var.list <- append(var.list, as.character(list.selected.var[[i]]$name))
   }
   var.info <- as.data.frame(table(var.list))
-  colnames(var.info) <- c('name', 'freq')
-  result.ranking.var <- var.info[order(var.info$freq, decreasing=TRUE),]
+  colnames(var.info) <- c('biomarker.name', 'frequency')
+  result.ranking.var <- var.info[order(var.info$frequency, decreasing=TRUE),]
   return(result.ranking.var)
 }

@@ -147,10 +147,10 @@ model.result.top.var <- function(x,
                          y,
                          list.selected.var,
                          list.index.cross){
-  nvar <- c(5, 10, 15, 20, 30, 40, 50, 75, 100)
-  result.data <- data.frame(nvar)
+  N <- c(5, 10, 15, 20, 30, 40, 50, 75, 100)
+  result.data <- data.frame(N)
   result.data[,c('mean.acc', 'mean.auc', 'mean.mcc', 'sd.acc', 'sd.auc', 'sd.mcc')] <- NA
-  for(n in nvar){
+  for(n in N){
     metrics <- train.model.crossval(x,
                                     y,
                                     list.selected.var,
@@ -166,12 +166,12 @@ model.result.top.var <- function(x,
       auc <- append(auc, metrics[[i]][2])
       mcc <- append(mcc, metrics[[i]][3])
     }
-    result.data[result.data$nvar == n,'mean.acc'] <- sum(acc) / length(metrics)
-    result.data[result.data$nvar == n,'mean.auc'] <- sum(auc) / length(metrics)
-    result.data[result.data$nvar == n,'mean.mcc'] <- sum(mcc) / length(metrics)
-    result.data[result.data$nvar == n,'sd.acc'] <- sd(acc)
-    result.data[result.data$nvar == n,'sd.auc'] <- sd(auc)
-    result.data[result.data$nvar == n,'sd.mcc'] <- sd(mcc)
+    result.data[result.data$N == n,'mean.acc'] <- sum(acc) / length(metrics)
+    result.data[result.data$N == n,'mean.auc'] <- sum(auc) / length(metrics)
+    result.data[result.data$N == n,'mean.mcc'] <- sum(mcc) / length(metrics)
+    result.data[result.data$N == n,'sd.acc'] <- sd(acc)
+    result.data[result.data$N == n,'sd.auc'] <- sd(auc)
+    result.data[result.data$N == n,'sd.mcc'] <- sd(mcc)
   }
   return(result.data)
 }

@@ -44,37 +44,37 @@ plot.result <- function(data, y){
     stop('available stability, acc, auc, mcc')
   }
   if(y == 'stability'){
-    result <- ggplot(data = data, aes(x = nvar, y = stability, group= method ,color = method)) +
+    result <- ggplot(data = data, aes(x = N, y = stability.asm, group= method ,color = method)) +
       geom_line() +
       geom_point() +
       scale_x_continuous(breaks= c(seq(0,100, by = 10))) +
-      labs(title= "Lustgarten’s stability measure", y="ASM(N)", x = "Top(N)")
+      labs(title= "ASM similarity measure between feature subsets vs top N variables.", y="ASM", x = "N")
     return(result)
   }
   if(y == 'acc'){
-    result <- ggplot(data = data, aes(x = nvar, y = mean.acc, group= method ,color = method)) +
+    result <- ggplot(data = data, aes(x = N, y = mean.acc, group= method ,color = method)) +
       geom_line() +
       geom_point() +
       scale_x_continuous(breaks= c(seq(0,100, by = 10))) +
-      labs(title= "Accuracy", y="ACC", x = "Top(N)")
+      labs(title= "The accuracy vs top N variables.", y="ACC", x = "N")
 
     return(result)
   }
   if(y == 'auc'){
-    result <- ggplot(data = data, aes(x = nvar, y = mean.auc, group= method ,color = method)) +
+    result <- ggplot(data = data, aes(x = N, y = mean.auc, group= method ,color = method)) +
       geom_line() +
       geom_point() +
       scale_x_continuous(breaks= c(seq(0,100, by = 10))) +
-      labs(title= "AUC", y="AUC", x = "Top(N)")
+      labs(title= "Area under the ROC curve vs top N variables.", y="AUC", x = "N")
 
     return(result)
   }
   if(y == 'mcc'){
-    result <- ggplot(data = data, aes(x = nvar, y = mean.mcc, group= method ,color = method)) +
+    result <- ggplot(data = data, aes(x = N, y = mean.mcc, group= method ,color = method)) +
       geom_line() +
       geom_point() +
       scale_x_continuous(breaks= c(seq(0,100, by = 10))) +
-      labs(title= "Matthews Correlation Coefficient", y="MCC", x = "Top(N)")
+      labs(title= "Matthews Correlation Coefficient vs top N variables.", y="MCC", x = "N")
 
     return(result)
   }

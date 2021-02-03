@@ -90,16 +90,16 @@ stabilty.selection <- function(list.selected.var, list.index.cross, nvar){
 #'
 #' @export
 stability.selection.top.var <- function(list.selected.var, list.index.cross){
-  nvar <- c(5,10,15,20,30,40,50,75,100)
+  N <- c(5,10,15,20,30,40,50,75,100)
   i = 1
   len0= list()
-  for(n in nvar){
+  for(n in N){
     len0[[i]] = stabilty.selection(list.selected.var = list.selected.var,
                                              list.index.cross = list.index.cross,
                                              nvar = n)
     i = i+1
   }
-  stability <- unlist(len0)
-  return(data.frame(cbind(nvar, stability)))
+  stability.asm <- unlist(len0)
+  return(data.frame(cbind(N, stability.asm)))
 }
 
