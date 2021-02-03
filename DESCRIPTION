@@ -20,11 +20,11 @@ Depends:
     ggplot2 (>= 3.3.2),
     sgof (>= 2.3.2),
     lattice (>= 0.20.41),
-    poibin (>= 1.5)
+    poibin (>= 1.5),
+    plyr (>= 1.8.6),
+    dplyr (>= 1.0.4)
 Imports:
-    dplyr,
-    stats,
-    plyr
+    stats
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
     pick a license
 Encoding: UTF-8
