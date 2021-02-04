@@ -77,7 +77,7 @@ rsampling <- function(x, y, test.size = 0.3){
 #' @export
 cross.val <- function(x, y, method, params.cv = list(niter = 10, k = 3, test.size = 0.3)){
   if(!(method %in% c('kfoldcv', 'rsampling'))){
-    stop('Unknown validation method, use please сv.kfold or cv.rsampling')
+    stop('Unknown validation method, use please kfoldcv or rsampling')
   }
   indexes.cross.val <- list()
   if(method == 'kfoldcv'){

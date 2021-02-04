@@ -1,6 +1,6 @@
-Package: benchmarkFS
+Package: ensembleFS
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: 
     person(given = "Pavel",
            family = "Hrablis",

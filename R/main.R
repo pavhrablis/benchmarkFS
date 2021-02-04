@@ -1,7 +1,7 @@
-#' Run end-to-end Benchmark for comparison of feature selection methods.
+#' Run end-to-end Ensemble for comparison of feature selection methods.
 #'
 #' @details
-#' Benchmark for comparison of feature selection methods dedicated to high-throughput
+#' Ensemble for comparison of feature selection methods dedicated to high-throughput
 #' sequencing data.
 #'
 #' @param x input data where columns are variables and rows are observations (all numeric)
@@ -38,7 +38,7 @@
 #' decisions <- data$class
 #' data$class <- NULL
 #'
-#' benchmarkFS(data,
+#' ensembleFS(data,
 #'            decisions,
 #'            methods = c('fs.utest', 'fs.mrmr'),
 #'            method.cv = 'cv.kfold',
@@ -52,7 +52,7 @@
 #' }
 #'
 #' @export
-benchmarkFS <- function(x,
+ensembleFS <- function(x,
                         y,
                         methods = c('fs.utest'),
                         method.cv = 'kfoldcv',
@@ -102,6 +102,8 @@ benchmarkFS <- function(x,
       stop('methods from the model argument must be listed in methods argument')
     }
   }
+
+  x = x[,!apply(x,2,var)==0]
 
   list.index.cross <- cross.val(x, y, method.cv, params.cv)
   feature.selection.result <- list()
