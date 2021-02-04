@@ -22,7 +22,7 @@ Depends:
     lattice (>= 0.20.41),
     poibin (>= 1.5),
     plyr (>= 1.8.6),
-    dplyr (>= 1.0.4)
+    dplyr (>= 1.0.3)
 Imports:
     stats
 License: `use_mit_license()`, `use_gpl3_license()` or friends to
